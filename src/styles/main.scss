@@ -5,6 +5,7 @@
 @use "available-devices";
 @use "faq";
 @use "footer";
+@use "header";
 
 @font-face {
     font-family: Avenir;
@@ -38,7 +39,7 @@ body {
 
 @mixin title($fontSize: 40px) {
     @include text($fontSize);
-    color: variaveis.$corTextoSecundario;
+    color: variaveis.$corTextoSecundaria;
 }
 
 .text--big {
@@ -67,7 +68,7 @@ body {
 
 .link-text {
     @include text(18px);
-    color: variaveis.$corTextoSecundario;
+    color: variaveis.$corTextoSecundaria;
     text-decoration: underline;
 }
 
@@ -96,15 +97,44 @@ body {
 }
 
 .button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 60px;
     font-size: 18px;
-    color: variaveis.$corTextoSecundario;
-    background-color: #6421ff;
+    color: variaveis.$corTextoSecundaria;
+    background-color: variaveis.$corDeFundoBotaoPrimario;
+    border: none;
     text-transform: uppercase;
-    margin-top: 2vw;
-    margin-bottom: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid variaveis.$corDeFundoBotaoPrimario;
+
+    &:hover {
+        background-color: lighten(variaveis.$corDeFundoBotaoPrimario, 3%);
+    }
+
+    &--secondary {
+        background-color: variaveis.$corDeFundoBotaoSecudario;
+        border: 1px solid variaveis.$corDeFundoBotaoSecudario;
+
+        &:hover {
+            background-color: lighten(variaveis.$corDeFundoBotaoSecudario, 10%);
+        }
+    }
+
+    &--dark {
+        background-color: rgba(0, 0, 0, 0.8);
+        border: 1px solid variaveis.$corTextoSecundaria;
+
+        &:hover {
+            background-color: variaveis.$corTextoSecundaria;
+            color: variaveis.$corDeFundo;
+        }
+    }
 }
 
 .image-text-section {
@@ -113,6 +143,9 @@ body {
     grid-template-columns: 1fr 1fr;
     align-items: center;
 
+    @media (max-width: 768px) {
+        display: block;
+    }
     img {
         max-width: 100%;
     }
@@ -141,6 +174,12 @@ body {
             width: calc(50% - 5.6vw);
             flex-direction: column;
             justify-content: center;
+
+            @media (max-width: 768px) {
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 }

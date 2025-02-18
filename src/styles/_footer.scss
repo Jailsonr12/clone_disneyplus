@@ -30,7 +30,7 @@
                 padding: 8px 16px;
                 display: block;
                 &:hover {
-                    color: variaveis.$corTextoSecundario;
+                    color: variaveis.$corTextoSecundaria;
                 }
             }
         }
@@ -59,7 +59,7 @@
         height: 38px;
 
         &:hover {
-            color: variaveis.$corTextoSecundario;
+            color: variaveis.$corTextoSecundaria;
         }
 
         option {

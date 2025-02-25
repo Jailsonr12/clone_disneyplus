@@ -1,0 +1,51 @@
+.retorno-text-section {
+    padding: 5.6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+    img {
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 80px;
+    }
+
+    &__text__container {
+        padding: 0 2vw;
+        text-align: center;
+        h2 {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+    }
+
+    &--image-full-width {
+        display: block;
+        position: relative;
+        img {
+            width: 100%;
+        }
+
+        &__text__container {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 100%;
+            width: calc(50% - 5.6vw);
+            flex-direction: column;
+            justify-content: center;
+
+            @media (max-width: 768px) {
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+}

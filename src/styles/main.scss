@@ -6,6 +6,8 @@
 @use "faq";
 @use "footer";
 @use "header";
+@use "retorno";
+@use "sass:color";
 
 @font-face {
     font-family: Avenir;
@@ -114,7 +116,10 @@ body {
     border: 1px solid variaveis.$corDeFundoBotaoPrimario;
 
     &:hover {
-        background-color: lighten(variaveis.$corDeFundoBotaoPrimario, 3%);
+        background-color: color.adjust(
+            variaveis.$corDeFundoBotaoPrimario,
+            $lightness: 3%
+        );
     }
 
     &--secondary {
@@ -122,7 +127,10 @@ body {
         border: 1px solid variaveis.$corDeFundoBotaoSecudario;
 
         &:hover {
-            background-color: lighten(variaveis.$corDeFundoBotaoSecudario, 10%);
+            background-color: color.adjust(
+                variaveis.$corDeFundoBotaoSecudario,
+                $lightness: 10%
+            );
         }
     }
 

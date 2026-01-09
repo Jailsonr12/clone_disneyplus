@@ -3,12 +3,12 @@
 .hero {
     padding: 5.6vw;
     min-height: 80vh;
-    background-image: url(../images/hero_desktop.jpeg);
+    background-image: url(../images/hero_desktop.jpg);
     text-align: center;
     background-size: cover;
 
     @media (max-width: 768px) {
-        background-image: url(../images/hero_celular.jpeg);
+        background-image: url(../images/hero_celular.jpg);
         padding-top: calc(50vw + 25px);
         background-size: contain;
         background-repeat: no-repeat;
@@ -22,7 +22,9 @@
 
     &__content {
         max-width: 640px;
-
+        background-color: #000000b3;
+        border-radius: 20px;
+        padding: 10px;
         &__branding {
             max-width: 320px;
             margin: 0 auto 38px;
